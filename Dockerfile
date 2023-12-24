@@ -1,10 +1,3 @@
-FROM alpine
-WORKDIR /app
-COPY test.js /app/test.js
-copy test.js .
+FROM nginx:alpine
 
-RUN apk add --update nodejs
-RUN apk add --update npm
-RUN npm install express
-
-CMD node test.js
+COPY index.html /usr/share/nginx/html/
